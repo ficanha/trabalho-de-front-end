@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecione seus Sabores de Pizza e Bebidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.tra.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #ffeef2 url('https://www.transparenttextures.com/patterns/paper-fabric.png');
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #b22222; /* tom escuro de vermelho */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        h2 {
+            text-align: center;
+            color: #c62828; /* tom médio de vermelho */
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        .container {
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid #d32f2f; /* borda vermelha */
+            border-radius: 12px;
+            padding: 20px;
+            background-color: #fff5f5; /* fundo levemente rosado */
+        }
+        .pizza-sabores, .bebidas, .bordas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        .item {
+            background-color: #ffcccc; /* fundo rosa claro */
+            border: 2px solid #ff6666; /* borda vermelha suave */
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            width: 180px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .item:hover {
+            transform: translateY(-4px);
+            background-color: #ff9999; /* fundo rosa mais forte ao passar o mouse */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .selected {
+            border-color: #d32f2f; /* borda mais escura quando selecionado */
+            background-color: #ffe6e6; /* fundo claro ao selecionar */
+            box-shadow: 0 0 15px rgba(255, 100, 100, 0.5);
+        }
+        .border-option {
+            border: 2px solid transparent;
+            padding: 10px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .border-option:hover {
+            border-color: #ff6666; /* borda ao passar o mouse */
+        }
+        .selected-border {
+            border-color: #d32f2f; /* borda escura selecionada */
+        }
+        @media (max-width: 600px) {
+            .item, .border-option {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selecione seus Sabores de Pizza e Bebidas</h1>
+
+    <div class="container">
+        <h2>Sabores de Pizza</h2>
+        <div class="pizza-sabores">
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/marguerita.jpeg" alt="Margherita">
+                Margherita
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/peperoni.jpeg" alt="Pepperoni">
+                Pepperoni
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/4queijos.png" alt="Quatro Queijos">
+                Quatro Queijos
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/vegetariana.jpeg" alt="Vegetariana">
+                Vegetariana
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/frango.jpeg" alt="Frango com Catupiry">
+                Frango com Catupiry
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/portuguesa.jpeg" alt="Portuguesa">
+                Portuguesa
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/calabresa.jpeg" alt="Calabresa">
+                Calabresa
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/havai.jpeg" alt="Hawaiiana">
+                Hawaiiana
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/atum.jpeg" alt="Atum">
+                Atum
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/mexicana.jpeg" alt="Mexicana">
+                Mexicana
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/picanha.jpeg" alt="Picanha">
+                Picanha
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/batata.jpeg" alt="Batata com Cheddar">
+                Batata com Cheddar
+            </div>
+        </div>
+
+        <h2>Bebidas</h2>
+        <div class="bebidas">
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/coca.jpeg" alt="Coca-Cola">
+                Coca-Cola
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/guarana.jpg" alt="Guaraná">
+                Guaraná
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/laranja.jpeg" alt="Suco de Laranja">
+                Suco de Laranja
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/maracuja.jpeg" alt="Suco de Maracujá">
+                Suco de Maracujá
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/abacaxi.jpeg" alt="Suco de Abacaxi">
+                Suco de Abacaxi
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/agua.jpeg" alt="Água Mineral">
+                Água Mineral
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/cerveja sol.jpeg" alt="Cerveja Sol">
+                Cerveja Sol
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/skol.jpeg" alt="Cerveja Skol">
+                Cerveja Skol
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/drinks.jpeg" alt="Drinks">
+                Drinks
+            </div>
+            <div class="item" onclick="toggleSelect(this)">
+                <img src="img/drinks.jpeg   " alt="Dose">
+                Dose
+            </div>
+        </div>
+
+        <h2>Escolha o Estilo da Borda</h2>
+        <div class="bordas">
+            <div class="border-option" onclick="selectBorder(this)">
+                <div style="border: 3px solid #ff6666; padding: 10px; border-radius: 12px;">
+                    Borda chocolate
+                </div>
+            </div>
+            <div class="border-option" onclick="selectBorder(this)">
+                <div style="border: 3px solid #ff6666; padding: 10px; border-radius: 12px;">
+                    Borda Catupiry
+                </div>
+            </div>
+            <div class="border-option" onclick="selectBorder(this)">
+                <div style="border: 3px solid #ff6666; padding: 10px; border-radius: 12px;">
+                    Borda Cheddar
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSelect(element) {
+            element.classList.toggle('selected');
+        }
+
+        function selectBorder(element) {
+            const borderOptions = document.querySelectorAll('.border-option');
+            borderOptions.forEach(option => option.classList.remove('selected-border'));
+            element.classList.add('selected-border');
+        }
+    </script>
+
+</body>
+</html>
